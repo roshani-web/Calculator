@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CalcMate - Pink Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <header>
+      <div class="logo">♡</div>
+      <div>
+        <h1>Calc<span>Mate</span></h1>
+        <p>Your little calculation companion</p>
+      </div>
+    </header>
+
+    <main class="layout">
+
+      <section class="calculator">
+        <div class="screen">
+          <div class="screen-label">CALCULATION</div>
+          <div id="expression" class="expression"></div>
+          <div id="result" class="result">0</div>
+        </div>
+
+        <div class="keypad">
+          <button class="key special" data-action="clear">AC</button>
+          <button class="key special" data-action="delete">DEL</button>
+          <button class="key special" data-action="percent">%</button>
+          <button class="key operator" data-value="/">÷</button>
+
+          <button class="key" data-value="7">7</button>
+          <button class="key" data-value="8">8</button>
+          <button class="key" data-value="9">9</button>
+          <button class="key operator" data-value="*">×</button>
+
+          <button class="key" data-value="4">4</button>
+          <button class="key" data-value="5">5</button>
+          <button class="key" data-value="6">6</button>
+          <button class="key operator" data-value="-">−</button>
+
+          <button class="key" data-value="1">1</button>
+          <button class="key" data-value="2">2</button>
+          <button class="key" data-value="3">3</button>
+          <button class="key operator" data-value="+">+</button>
+
+          <button class="key zero" data-value="0">0</button>
+          <button class="key" data-action="decimal">.</button>
+          <button class="key equals" data-action="equals">=</button>
+        </div>
+
+        <p class="hint">Made with ♡ in pink</p>
+      </section>
+
+      <aside class="history">
+        <div class="history-header">
+          <h2>♡ History</h2>
+          <button id="clearHistory" class="clear-btn">Clear</button>
+        </div>
+
+        <div id="historyList">
+          <p class="empty">Your calculations will appear here.</p>
+        </div>
+      </aside>
+
+    </main>
+
+    <footer>CalcMate · Small tool. Big calculations.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

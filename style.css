@@ -1,0 +1,289 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  padding: 30px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fff0f5, #fbd3e3, #fff7fa);
+  color: #633d50;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  width: 100%;
+  max-width: 850px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #f5a9c9, #d65c94);
+  color: white;
+  font-size: 34px;
+  box-shadow: 0 5px 15px #d65c9433;
+}
+
+h1 {
+  font-size: 29px;
+}
+
+h1 span {
+  color: #d65c94;
+}
+
+header p {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #a77a91;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(200px, 0.8fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.calculator,
+.history {
+  background: #ffffffd9;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  padding: 22px;
+  box-shadow: 0 15px 40px #a94d741c;
+}
+
+.screen {
+  min-height: 145px;
+  padding: 18px;
+  margin-bottom: 18px;
+  border: 1px solid #f3ccdc;
+  border-radius: 17px;
+  background: #fff7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.screen-label {
+  align-self: flex-start;
+  color: #b38a9e;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.expression {
+  width: 100%;
+  min-height: 22px;
+  text-align: right;
+  overflow-wrap: anywhere;
+  color: #b38a9e;
+  font-size: 15px;
+}
+
+.result {
+  max-width: 100%;
+  margin-top: 5px;
+  font-size: clamp(35px, 6vw, 48px);
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.key {
+  height: 60px;
+  border: 1px solid #f4dce6;
+  border-radius: 15px;
+  background: #fff9fc;
+  color: #70455b;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: 0 3px 7px #b75d8310;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.key:hover {
+  background: #fce4ef;
+  transform: translateY(-2px);
+}
+
+.key:active {
+  transform: scale(0.95);
+}
+
+.key.special {
+  background: #fbe0eb;
+  color: #bd4c7e;
+  font-size: 15px;
+}
+
+.key.operator {
+  background: #f4c4d9;
+  color: #9c3866;
+  font-size: 25px;
+}
+
+.key.zero {
+  grid-column: span 2;
+}
+
+.key.equals {
+  background: linear-gradient(135deg, #ef9fc0, #d85e97);
+  color: white;
+  border: none;
+  font-size: 27px;
+  box-shadow: 0 5px 12px #d85e9730;
+}
+
+.hint {
+  margin-top: 16px;
+  text-align: center;
+  color: #b38a9e;
+  font-size: 11px;
+}
+
+.history {
+  min-width: 0;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f3dce6;
+}
+
+.history-header h2 {
+  font-size: 18px;
+}
+
+.clear-btn {
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: #fbe0eb;
+  color: #bd4c7e;
+  font-size: 11px;
+}
+
+#historyList {
+  max-height: 440px;
+  overflow-y: auto;
+}
+
+.empty {
+  padding: 25px 5px;
+  text-align: center;
+  color: #b38a9e;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.history-item {
+  display: block;
+  width: 100%;
+  padding: 15px 5px;
+  border: none;
+  border-bottom: 1px solid #f5e3eb;
+  background: transparent;
+  color: #70455b;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.history-item:hover {
+  background: #fff0f6;
+}
+
+.history-expression {
+  display: block;
+  margin-bottom: 7px;
+  color: #b38a9e;
+  font-size: 12px;
+}
+
+.history-answer {
+  display: block;
+  font-size: 19px;
+  font-weight: bold;
+  color: #c04e83;
+}
+
+footer {
+  margin-top: 22px;
+  text-align: center;
+  color: #a77a91;
+  font-size: 12px;
+}
+
+@media (max-width: 650px) {
+  body {
+    padding: 22px 12px;
+    align-items: flex-start;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator,
+  .history {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .keypad {
+    gap: 8px;
+  }
+
+  .key {
+    height: 58px;
+  }
+
+  #historyList {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 350px) {
+  .key {
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .calculator {
+    padding: 11px;
+  }
+}
